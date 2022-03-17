@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src='https://raw.githubusercontent.com/cansuk/dynamic-form-generator/master/public/dynamic-form.gif' />
+  <img src='https://raw.githubusercontent.com/cansuk/dynamic-form-generator/master/public/dynamic-form.gif?token=GHSAT0AAAAAABO5AL24OUPWCKBVTXKOWL46YRTG7GA' />
 
   &#xa0;
 
