@@ -7,15 +7,14 @@ export default async function getData() {
         credentials: 'same-origin', // include, *same-origin, omit
         headers: {
             //'Content-Type': 'application/json'
-            'Content-Type': 'text/html'
+            'Content-Type': 'text/json'
             //'Content-Type': 'application/x-www-form-urlencoded',
         },
         redirect: 'follow', // manual, *follow, error
         referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
     });
-    debugger;
     if (!response.ok) {
         // TODO
     }
-    return await response.text(); // parses JSON response into native JavaScript objects
+    return await response.json(); // parses JSON response into native JavaScript objects
 }
