@@ -7,7 +7,7 @@ import { Table } from "./styled-components/Table";
 import { TextBox } from "./styled-components/TextBox";
 
 const Form = ({ formRows, formCols, handleTabs }) => {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(Array(9).fill(Array(2)));
 
 
     const handleChange = (e, index, fieldIndex) => {
@@ -18,12 +18,11 @@ const Form = ({ formRows, formCols, handleTabs }) => {
         data[index][fieldIndex] = e.target.value;
     }
 
-    const handleFill = (e) => {
+    const handleFill = (e, index) => {
         // generate auto-filled form rows 
         const tempArr = Array(formRows.length);
         tempArr.fill(data[0]);
         setData(tempArr);
-        //handleTabs(tempArr, true);
     }
 
     const handleClearForm = (e) => {
@@ -47,13 +46,13 @@ const Form = ({ formRows, formCols, handleTabs }) => {
                         <td key={shortid.generate()}>
                             <Row>
                                 <TextBox type="text" value={data?.[index]?.[0]} onChange={(e) => handleChange(e, index, 0)} />
-                                {index === 0 && <Button color={colors.btnColor} backcolor={colors.btnBackColor} onClick={handleFill}>Doldur</Button>}
+                                {index === 0 && <Button color={colors.btnColor} backcolor={colors.btnBackColor} onClick={(e) => handleFill(e, index)}>Doldur</Button>}
                             </Row>
                         </td>
                         <td key={shortid.generate()}>
                             <Row>
                                 <TextBox type="text" value={data?.[index]?.[1]} onChange={(e) => handleChange(e, index, 1)} />
-                                {index === 0 && <Button color={colors.btnColor} backcolor={colors.btnBackColor} onClick={handleFill}>Doldur</Button>}
+                                {index === 0 && <Button color={colors.btnColor} backcolor={colors.btnBackColor} onClick={(e) => handleFill(e, index)}>Doldur</Button>}
                                 <Button color={colors.btnColor} backcolor={colors.btnBackColor} onClick={() => handleTabs(data[index])}>Ekle</Button>
                             </Row>
                         </td>
